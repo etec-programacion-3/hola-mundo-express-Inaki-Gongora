@@ -1,13 +1,14 @@
 import express from 'express';
 
 const app = express();
-
-app.get('/hola', (req, res) => {
-  res.send('Hola Mundo!');
+app.get('/:nombre/hola', (req, res) => {
+  const nombre = req.params.nombre;
+  res.send('Hola ' + nombre);
 });
 
-app.get('/chau', (req, res) => {
-  res.send('Chau Mundo!');
+app.get('/:nombre/chau', (req, res) => {
+  const nombre = req.params.nombre;
+  res.send('Chau ' + nombre);
 });
 
 app.listen(3000, () => {
